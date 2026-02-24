@@ -1,26 +1,258 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/tooltip.css';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.ttf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic.ttf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-BoldItalic.ttf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* 添加其他字体文件 */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Light.ttf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-LightItalic.ttf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url('/fonts/Inter-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-MediumItalic.ttf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-SemiBold.ttf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-SemiBoldItalic.ttf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.ttf') format('opentype'); 
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-BoldItalic.ttf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Black.ttf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-BlackItalic.ttf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #e9f0f7;
+  --background-color-alt: #f4f7fb;
+  --text-color: #0e1523;
+  --panel-background: #fff;
+  --text-white: #fff;
+  --secondary-text-color: #94adcf;
+
+  --primary-blue: #0f68aa;
+  --primary-green: #0fc659;
+  --light-blue: #2fbdf4;
+  --warning-yellow: #ffc300;
+  --error-red: #ff1900;
+  --error-red-alt: #e01f39;
+  --success-green-alt: #2ecc71;
+  --link-blue: #3498db;
+  --neutral-gray: #7f8c8d;
+  --light-green: #cff4de;
+
+  --third-background: #f4f8fb;
+  --fourth-background: #f8f9fa;
+  --fifth-background: #f4f8fb;
+  --sixth-background: #f4f8fb;
+
+  --light-gray: #e0e0e0;
+  --success-color: #e7f9ee;
+  --error-color: #f9e7e7;
+
+  --border-gray: #dce4ef;
+  --mask-background: rgba(0, 0, 0, 0.5);
+
+  --video-background: rgba(0, 0, 0, 0.2);
+
+  --button-background: #e6f2fa;
+  --button-text-color: #000000;
+  --button-green: #e6f9eb;
+
+  --card-btn-blue: #2fbdf4;
+  --farming-description-text-color: #94adcf;
+  --farming-card-border-color: #e9f0f7;
+  --farming-btn-bg-blue: #e6f2fa;
+  --farming-btn-txt-blue: #0f68aa;
+  --farming-btn-bg-green: #e6f9eb;
+  --farming-btn-txt-green: #0fc659;
+  --mobile-header-line: #BBCCDA;
+  
+  --tip-bg-color: #fff;
+  --tip-txt-color: #1d2f49;
+
+  --wrap-txt-color: #94adcf;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.dark {
+  --background-color: #0e1523;
+  --background-color-alt: #1a202c;
+  --text-color: #e2e8f0;
+  --panel-background: #152234;
+  --text-white: #fff;
+  --secondary-text-color: #a0aec0;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-blue: #1a7fd1;
+  --primary-green: #1ba559;
+  --light-blue: #2f9cc7;
+  --warning-yellow: #ffd633;
+  --error-red: #ff6b6b;
+  --error-red-alt: #ff4d6a;
+  --success-green-alt: #4ade80;
+  --link-blue: #4d8bb8;
+  --neutral-gray: #a0aec0;
+  --light-green: #d1fae5;
+
+  --third-background: #1a202c;
+  --fourth-background: #2d3748;
+  --fifth-background: #263d5f;
+  --sixth-background: #152234;
+
+  --light-gray: #4a5568;
+  --success-color: #1a4731;
+  --error-color: rgba(255, 107, 107, 0.2);
+
+  --border-gray: #4a5568;
+  --mask-background: rgba(0, 0, 0, 0.8);
+
+  --video-background: #000;
+
+  --button-background: #0f68aa;
+  --button-text-color: #e6f2fa;
+  --button-green: #1ba559;
+
+  --card-btn-blue: #2fbdf4;
+  --farming-description-text-color: #8ca9cf;
+  --farming-card-border-color: #263d5f;
+  --farming-btn-bg-blue: #084166;
+  --farming-btn-txt-blue: #66b2e9;
+  --farming-btn-bg-green: #065635;
+  --farming-btn-txt-green: #0fc659;
+  --mobile-header-line: #1D2D41;
+  
+  --tip-bg-color: #2f4c77;
+  --tip-txt-color: #fff;
+
+  --wrap-txt-color: #8ca9cf;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0!important;
+}
+
+.main {
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  padding-top: 15vh;
+  display: flex!important;
+  justify-content: center;
+  align-items: start;
+  gap: 56px;
+
+  @media (max-width: 768px) {
+    padding-top: 10vh;
+  }
 }
